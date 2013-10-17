@@ -7,6 +7,4 @@
     You have logged out successfully.
     Please wait while you are being redirected.
 </p>
-<a href="<?php eh(APP_URL) ?>">
-    &larr; Go to Home
-</a>
+<a href="<?php eh(APP_URL) ?>">&laquo; Go to Home</a>

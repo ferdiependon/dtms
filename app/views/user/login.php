@@ -2,13 +2,13 @@
 
 <h1>Log In</h1>
 <?php if (isset($_SESSION['username'])) : ?>
-    <?php header("refresh: 3; url=/task/index") ?>
+    <?php header("refresh: 3; url=/") ?>
     <p class="alert alert-success">
         You have logged in successfully,
         <b><?php echo $_SESSION['username'] ?></b>.
         Please wait while you are being redirected.
     </p>
-    <a href="<?php eh(url('task/index')) ?>">&larr; View Tasks</a>
+    <a href="<?php eh(APP_URL) ?>">&laquo; Go to Home</a>
     
 <?php else : ?>
     <?php if ($user->hasError()) : ?>
@@ -42,8 +42,8 @@
         <input type="password" name="password" value="<?php eh(Param::get('password')) ?>">
         <br/>
         <input type="hidden" name="page_next" value="login">
+        <span class="sign-up">No account yet? <a href="<?php eh(url('user/register')) ?>">Sign up</a> now!</span>
         <button type="submit" class="btn btn-primary">Log In</button>
     </form>
 
-    <h5>No account yet? <a href="<?php eh(url('user/register')) ?>">Sign up</a> now!</h5>
 <?php endif ?>

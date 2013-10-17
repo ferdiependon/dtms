@@ -16,98 +16,153 @@ div span.session {
     float: right;
 }
 
-div.thread-list {
-    border: double 5px #08c;
-    border-radius: 10px;
-    margin-top: 20px;
-    padding: 10px;
+div.day {
+    //background-color: #4af;
+    border: solid 10px #bbf;
+    border-radius: 5px;
+    color: white;
+    margin: 20px auto;
+    height: 100px;
+    overflow: hidden;
+    padding: 20px 10px;
+    transition: all 0.3s;
 }
 
-div.thread-list span {
+div.day:hover {
+    background-color: white;
+    border: solid 10px #bbf;
+    color: #4af;
+    transition: all 0.3s;
+}
+
+div.circle {
+    background-color: #4af;
+    border-radius: 100%;
+    clear: both;
+    height: 2000px;
+    float: left;
+    position: relative;
+    top: -1000px;
+    left: -950px;
+    -webkit-transform: scale(1.0);
+    transition: all 0.5s ease-out;
+    width: 2000px;
+}
+
+div.day:hover div.circle{
+    -webkit-transform: scale(0);
+    transition: all 0.4s ease-out;
+}
+
+div.day div.date {
+    float:left;
+    margin-top: 10px;
+    width: 200px;
+}
+
+div.day div.full-date {
+    font-size: 20px;
+}
+
+div.day div.day-name {
+    font-size: 60px;
+    font-weight: heavy;
+}
+
+div.day div.date, div.day div.tasks {
+    position: relative;
+    z-index: 1;
+}
+
+div.day div.tasks span.title {
     display: inline-block;
-    width: 27%;
+    width: 100px;
 }
 
-div.thread-list span.comments {
-    width: 10%;
+div.week a {
+    text-decoration: none;
 }
 
-div.pager {
-    margin: 0px;
+form span.sign-up, span.sign-up {
+    font-size: 10px;
+    font-weight: bold;
 }
 
-div.pager form {
-    float: right;
-    margin: 0px;
+form.task-view {
+    margin-top: 20px;
 }
 
-div.pager select {
-    width: 60px;
+form.task-view  input {
+    width: 300px;
 }
 
-div.thread-list div.header {
-    background-color: #08c;
-    border-radius: 5px;
-    color: white;
-    padding: 5px;
+form.task-view textarea {
+    height: 100px;
+    resize: none;
+    width: 700px;
 }
 
-div.thread-list ul {
-    list-style-type: none;
-    margin-left: 0px;
-    padding: 0px;
-}
-
-div.thread-list ul li {
-    border-bottom: solid 1px #08c;
-    padding: 5px;
-}
-
-div.comment {
-    border: dashed 2px #08c;
-    border-radius: 10px;
-    color: white;
-    margin: 10px auto;
-    padding: 10px;
-}
-
-div.comment .meta {
-    background-color: #08c;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-div.comment .text {
-    color: black;
-    padding: 5px;
-}
- 
-form.well input.span2, form.well textarea  {
+form.task-view div.left {
+    float: left;
     width: 400px;
 }
 
-form.well textarea {
-    height: 200px;
-    max-width: 880px;
-}
- 
-div.login {
-    display: block;
-    float: right;
-    height: 41px;
+div.task-list {
+    margin-top: 20px;
 }
 
-div.login input {
-    margin-top: 5px;
+div.task-list div.header {
+    border-bottom: solid 3px #bbf;
+    font-weight: bold;
+    padding-bottom: 10px;
 }
 
-div.login .btn {
+div.task-list div.cell {
+    border-bottom: solid 1px #bbf;
+    padding: 5px;
+    transition: all 0.3s;
+}
+
+div.task-list div.cell:hover, div.task-list div.cell-active {
+    background-color: #4af;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+div.task-list div  span {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+}
+
+div.task-list div span.short {
+    width: 90px;
+}
+
+div.task-list div.cell input[type=radio] {
     margin-top: -5px;
 }
 
-div.login span{
+span.middle {
     display: inline-block;
-    margin-top: 11px;
+    margin: 0px auto;
+    left: 20%;
     position: relative;
-    top: 0px;
+}
+
+a.right {
+    float: right;
+}
+
+span.sign-up {
+    position: relative;
+    top: -5px;
+}
+
+span.total {
+    display: inline-block;
+    float: right;
+    margin-right: 85px;
 }

@@ -22,16 +22,16 @@ class User extends AppModel
         ),
     );
     
-    public static function getUsername($username)
+    public static function getId($username)
     {
         $db = DB::conn();
         
         $row = $db->value(
-            'SELECT 1 FROM user WHERE username = ?',
+            'SELECT id FROM user WHERE username = ?',
             array($username)
         );
 
-        return (bool)$row;
+        return $row;
     }
     
     public function login()
@@ -68,7 +68,7 @@ class User extends AppModel
     public function register()
     {
         $this->validation['rpt_password']['match'][] = $this->password;
-        $this->isRegistered = self::getUsername($this->username);
+        $this->isRegistered = self::getId($this->username);
         if (!$this->validate() || $this->isRegistered) {
             throw new ValidationException('Invalid registration info!');
         }
